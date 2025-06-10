@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cargo Space Sharing - Zimbabwe</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .ad-container {
+            width: 800px;
+            height: 600px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26,54,93,0.9) 0%, rgba(25,25,112,0.8) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+        
+        .truck-visual {
+            width: 300px;
+            height: 150px;
+            background: #FF6B35;
+            border-radius: 10px;
+            position: relative;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        
+        .truck-cab {
+            width: 80px;
+            height: 80px;
+            background: #FF8C42;
+            border-radius: 8px;
+            position: absolute;
+            left: 10px;
+            top: 35px;
+        }
+        
+        .truck-trailer {
+            width: 200px;
+            height: 120px;
+            background: #FFA500;
+            border-radius: 8px;
+            position: absolute;
+            right: 10px;
+            top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            gap: 5px;
+        }
+        
+        .cargo-box {
+            width: 35px;
+            height: 35px;
+            border-radius: 4px;
+            animation: pulse 2s infinite;
+        }
+        
+        .cargo-box:nth-child(1) { background: #4CAF50; }
+        .cargo-box:nth-child(2) { background: #2196F3; }
+        .cargo-box:nth-child(3) { background: #FF9800; }
+        .cargo-box:nth-child(4) { background: #E91E63; }
+        .cargo-box:nth-child(5) { background: #9C27B0; }
+        .cargo-box:nth-child(6) { background: #00BCD4; }
+        .cargo-box:nth-child(7) { background: #8BC34A; }
+        .cargo-box:nth-child(8) { background: #FF5722; }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+        
+        .wheel {
+            width: 25px;
+            height: 25px;
+            background: #333;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -10px;
+        }
+        
+        .wheel1 { left: 25px; }
+        .wheel2 { left: 55px; }
+        .wheel3 { right: 80px; }
+        .wheel4 { right: 30px; }
+        
+        h1 {
+            font-size: 3em;
+            margin: 0 0 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .features {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .feature {
+            text-align: center;
+            flex: 1;
+            padding: 0 20px;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+        }
+        
+        .cta {
+            background: linear-gradient(45deg, #FF6B35, #F7931E);
+            padding: 15px 40px;
+            border-radius: 50px;
+            border: none;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.4);
+        }
+        
+        .route-line {
+            position: absolute;
+            top: 40%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #FFD700, transparent);
+            animation: flow 3s linear infinite;
+        }
+
+        #link {
+            color: white;
+            text-decoration: none;
+        }
+        
+        @keyframes flow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div class="ad-container">
+        <div class="content">
+            <div class="route-line"></div>
+            
+            <div class="truck-visual">
+                <div class="truck-cab"></div>
+                <div class="truck-trailer">
+                    <div class="cargo-box"></div>
+                    <div class="cargo-box"></div>
+                    <div class="cargo-box"></div>
+                    <div class="cargo-box"></div>
+                    <div class="cargo-box"></div>
+                    <div class="cargo-box"></div>
+                    <div class="cargo-box"></div>
+                    <div class="cargo-box"></div>
+                </div>
+                <div class="wheel wheel1"></div>
+                <div class="wheel wheel2"></div>
+                <div class="wheel wheel3"></div>
+                <div class="wheel wheel4"></div>
+            </div>
+            
+            <h1>Smart Cargo Sharing</h1>
+            <div class="subtitle">Revolutionizing Transport Across Zimbabwe & Beyond</div>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🚛</div>
+                    <div>Optimize Routes</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <div>Reduce Costs</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤝</div>
+                    <div>Share Space</div>
+                </div>
+            </div>
+            
+            <button class="cta"><a id="link" href="https://bitstudio.research/survey">Help Shape the Future - Take Our Survey!</a></button>
+        </div>
+    </div>
+  </body>
+</html>
